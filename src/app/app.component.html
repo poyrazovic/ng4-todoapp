@@ -1,11 +1,12 @@
 <div class="add-wrapper mt-5 mb-3 form-inline">
-  <input type="text" placeholder="To do" class="form-control" [(ngModel)]="name" [ngClass]="{'border-danger': inputErrorStatus}" (keyup.enter)="initClick()">
-  <button class="btn btn-primary ml-3" (click)="initClick()">Add</button>
+  <input type="text" placeholder="To do" class="form-control" [(ngModel)]="name" [ngClass]="{'border-danger': inputErrorStatus}" (keyup.enter)="addItem()">
+  <button class="btn btn-primary ml-3" (click)="addItem()">Add</button>
 </div>
 <p class="text-danger" *ngIf="inputErrorStatus">Input value is empty. This required.</p>
 
 <h2>To-do List</h2>
 
+<p *ngIf="items.length === 0">To-do list is empty.</p>
 <ul>
-  <li *ngFor="let item of listItem">{{ item.name }} - <a class="text-danger" (click)="removeItem(item.id)">Delete</a></li>
+  <li *ngFor="let item of items">{{ item.name }} - <a class="text-danger" (click)="removeItem(item.id)">Delete</a></li>
 </ul>

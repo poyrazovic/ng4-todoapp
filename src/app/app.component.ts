@@ -9,13 +9,13 @@ export class AppComponent {
   inputErrorStatus = false;
   name = '';
   id = 1;
-  listItem = [];
+  items = [];
 
-  initClick() {
+  addItem() {
     if (this.name !== '') {
       this.inputErrorStatus = false;
-      this.listItem.push({id: this.id, name: this.name});
       this.id++;
+      this.items.push({id: `${this.id}`, name: `${this.name}`});
       this.name = '';
     } else {
       this.inputErrorStatus = true;
@@ -23,6 +23,6 @@ export class AppComponent {
   }
 
   removeItem(data) {
-    this.listItem = this.listItem.filter(item => item.id !== data);
+    this.items = this.items.filter(item => item.id !== data);
   }
 }
