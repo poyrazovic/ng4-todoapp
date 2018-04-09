@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('teststart App', () => {
+describe('ng4-todoapp App', () => {
   let page: AppPage;
 
   beforeEach(() => {
