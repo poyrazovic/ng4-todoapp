@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
 
   getTodoItem() {
     if (localStorage.getItem('todos') == null || localStorage.getItem('todos') == '') {
-      localStorage.todos = [];
+      localStorage.setItem('todos', '[]');
     } else {
       this.items = JSON.parse(localStorage.getItem('todos'));
       return JSON.parse(localStorage.getItem('todos'));
